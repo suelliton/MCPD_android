@@ -63,13 +63,7 @@ public class RegistroAdapter extends RecyclerView.Adapter {
 
         Cultura c1 = listaCulturas.get(registroEscolhido.getCulturaId())  ;
         Praga p1 = listaPragas.get(registroEscolhido.getPragaId());
-        if(position != 0){
-            registroholder.label_esc.setVisibility(View.INVISIBLE);
-            registroholder.label_dataHora.setVisibility(View.INVISIBLE);
-            registroholder.label_cultura.setVisibility(View.INVISIBLE);
-            registroholder.label_praga.setVisibility(View.INVISIBLE);
-           // registroholder.label_infestacaoTratamento.setVisibility(View.INVISIBLE);
-        }
+
 
         registroholder.text_esc.setText(""+registroEscolhido.getEscala());
         registroholder.text_dataHora.setText(""+registroEscolhido.getDataRegistro());
@@ -109,10 +103,7 @@ public class RegistroAdapter extends RecyclerView.Adapter {
        // final TextView text_infestacaoTratamento;
         final LinearLayout row;
 
-        final TextView label_esc;
-        final TextView label_dataHora;
-        final TextView label_cultura;
-        final TextView label_praga;
+
       //  final TextView label_infestacaoTratamento;
 
         public RegistroViewHolder(View v) {
@@ -123,11 +114,6 @@ public class RegistroAdapter extends RecyclerView.Adapter {
             text_praga = v.findViewById(R.id.reg_praga);
            // text_infestacaoTratamento = v.findViewById(R.id.reg_inf_trat);
 
-            label_esc = v.findViewById(R.id.label_escala);
-            label_dataHora = v.findViewById(R.id.label_horaData);
-            label_cultura = v.findViewById(R.id.label_cultura);
-            label_praga = v.findViewById(R.id.label_praga);
-            //label_infestacaoTratamento = v.findViewById(R.id.label_tratamento);
 
             row = v.findViewById(R.id.reg_row);
 

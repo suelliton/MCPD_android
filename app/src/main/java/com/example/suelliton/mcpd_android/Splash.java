@@ -45,7 +45,7 @@ public class Splash extends AppCompatActivity {
             public void run() {
                 mostrarLogin();
             }
-        }, 1200);
+        }, 800);
     }
 
     public void preencheBanco(){

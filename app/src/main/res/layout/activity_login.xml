@@ -47,7 +47,7 @@
                 android:id="@+id/ed_login"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Login"
+                android:hint="Usuário"
                 android:alpha="0.9"
                 android:background="@drawable/rectangle_white"
                 android:padding="10dp"

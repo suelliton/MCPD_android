@@ -41,7 +41,7 @@ public class PragaAdapter extends BaseAdapter {
         Praga praga = (Praga) getItem(position);
 
         holder.pragaTextView.setText(praga.getNome());
-
+        holder.pragaTextView.setTextSize(25);
         return convertView;
     }
 

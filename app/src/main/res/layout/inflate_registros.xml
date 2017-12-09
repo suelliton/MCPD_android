@@ -18,27 +18,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp">
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
-            <TextView
-
-                android:id="@+id/label_escala"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:paddingBottom="10dp"
-                android:text="Escala" />
 
             <TextView
                 android:id="@+id/reg_escala"
+                android:textSize="18dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="@color/preto"
+                android:layout_gravity="start"
                 android:layout_weight="1"
-                android:text="esc.|" />
+                android:text=""
+                android:textColor="@color/preto" />
 
         </LinearLayout>
 
@@ -46,55 +38,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp">
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
-            <TextView
-
-
-                android:id="@+id/label_horaData"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:paddingBottom="10dp"
-                android:text="Data-Hora" />
 
             <TextView
                 android:id="@+id/reg_hr"
+                android:textSize="18dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="start"
                 android:layout_weight="1"
-                android:textColor="@color/preto"
-                android:text="Data-Hora" />
+                android:text=""
+                android:textColor="@color/preto" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp">
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
-            <TextView
-                android:id="@+id/label_cultura"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:paddingBottom="10dp"
-                android:text="Cultura" />
 
             <TextView
                 android:id="@+id/reg_cult"
+                android:textSize="18dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="start"
                 android:layout_weight="1"
-                android:textColor="@color/preto"
-                android:text="Cultura" />
+                android:text=""
+                android:textColor="@color/preto" />
 
         </LinearLayout>
 
@@ -102,52 +77,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp">
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
-            <TextView
-                android:id="@+id/label_praga"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:paddingBottom="10dp"
-                android:text="Praga" />
 
             <TextView
                 android:id="@+id/reg_praga"
+                android:textSize="18dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="start"
                 android:layout_weight="1"
-                android:textColor="@color/preto"
-                android:text="Praga" />
+                android:text=""
+                android:textColor="@color/preto" />
         </LinearLayout>
-<!--
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp">
-
-            <TextView
-                android:id="@+id/label_tratamento"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:paddingBottom="10dp"
-                android:text="Tratamento" />
-
-            <TextView
-                android:id="@+id/reg_inf_trat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="Tratamento" />
-        </LinearLayout> -->
 
 
     </LinearLayout>

@@ -99,7 +99,7 @@ public class ConsultaRegistrosActivity extends AppCompatActivity{
 
 
 
-        RecyclerView.LayoutManager layout = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        RecyclerView.LayoutManager layout = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,true);
         recyclerView.setLayoutManager(layout);
 
         recyclerView.addOnItemTouchListener(new MeuRecyclerViewClickListener(ConsultaRegistrosActivity.this, recyclerView, new MeuRecyclerViewClickListener.OnItemClickListener() {

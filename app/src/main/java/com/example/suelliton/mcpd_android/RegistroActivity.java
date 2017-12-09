@@ -7,9 +7,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -125,7 +127,7 @@ public class RegistroActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        setListeners();
+
     }
 
     public void bindViews() {
@@ -202,13 +204,15 @@ public class RegistroActivity extends AppCompatActivity {
         childValueCultura = culturaReference.child("/Cultura").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                listaCulturas.removeAll(listaCulturas);
-                for (DataSnapshot snapshot:dataSnapshot.getChildren()) {
-                    Cultura cultura = snapshot.getValue(Cultura.class);//pega o objeto do firebase
-                    listaCulturas.add(cultura);//adiciona na lista que vai para o adapter
-                    Log.i("c",cultura.getNome()+"");
-                }
-                adaptador_cultura.notifyDataSetChanged();
+
+                    listaCulturas.removeAll(listaCulturas);
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        Cultura cultura = snapshot.getValue(Cultura.class);//pega o objeto do firebase
+                        listaCulturas.add(cultura);//adiciona na lista que vai para o adapter
+                        Log.i("c", cultura.getNome() + "");
+                    }
+                    adaptador_cultura.notifyDataSetChanged();
+
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -222,7 +226,6 @@ public class RegistroActivity extends AppCompatActivity {
         listaPragas= new ArrayList<>();
         adaptador_praga = new PragaAdapter(this, listaPragas);
         spinner_praga.setAdapter(adaptador_praga);
-
         spinner_cultura.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, final int i, long l) {
@@ -381,7 +384,6 @@ public class RegistroActivity extends AppCompatActivity {
             default:
                 Toast.makeText(this, "Escala inexistente", Toast.LENGTH_SHORT).show();
         }
-        setListeners();
 
     }
 
@@ -417,7 +419,7 @@ public class RegistroActivity extends AppCompatActivity {
 
 
    public String getDataAtual(){
-       SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy-\n HH:mm:ss");
+       SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss\ndd-MM-yy");
        // OU
        SimpleDateFormat dateFormat_hora = new SimpleDateFormat("HH:mm:ss");
 
@@ -468,9 +470,9 @@ public class RegistroActivity extends AppCompatActivity {
                break;
            default:
        }
-       EditText observacoes = (EditText) findViewById(R.id.observacoes);
-       registroAtual.setObs(observacoes.getText().toString());
-       EditText tratamento = (EditText) findViewById(R.id.tratamento);
+
+       registroAtual.setObs(obs.getText().toString());
+
        registroAtual.setTipo(tratamento.getText().toString());
        registroAtual.setDataRegistro(getDataAtual());
        registroAtual.setDataTratamento(getDataAtual());
@@ -479,11 +481,19 @@ public class RegistroActivity extends AppCompatActivity {
        registroAtual.setUsuarioId(1);
        if(REGISTRO_PARA_EDITAR == null){
            registroReference.push().setValue(registroAtual);
-           Toast.makeText(this, "Dados salvos com sucesso:",  Toast.LENGTH_SHORT).show();
+           Snackbar.make((View)obs.getParent(), "Dados salvos com sucesso", Snackbar.LENGTH_LONG).show();
+
+           obs.setText("");
+           tratamento.setText("");
        }else{
         registroReference.child(registroAtual.getKey()).setValue(registroAtual);
-           Toast.makeText(this, "Dados atualizados", Toast.LENGTH_SHORT).show();
+
+           Snackbar.make((View)obs.getParent(), "Dados atualizados", Snackbar.LENGTH_LONG).show();
+
+           REGISTRO_PARA_EDITAR = null;
        }
+       obs.setText("");
+       tratamento.setText("");
    }
 
 

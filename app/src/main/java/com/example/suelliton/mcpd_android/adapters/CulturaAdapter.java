@@ -49,7 +49,7 @@ public class CulturaAdapter extends BaseAdapter {
         Cultura cultura = (Cultura) getItem(position);
 
         holder.culturaTextView.setText(cultura.getNome());
-
+        holder.culturaTextView.setTextSize(25);
         return convertView;
     }
 
